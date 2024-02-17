@@ -1,0 +1,71 @@
+version: '3.9'
+services:
+  database:
+    container_name: 'database'
+    image: mysql:8.0
+    ports:
+      - '5432:5432'
+    environment:
+       MYSQL_DATABASE: 'medicareApp'
+       MYSQL_PASSWORD: '2DDQRR1124'
+       MYSQL_ROOT_PASSWORD: '3RF11134'
+    volumes:
+      - 'database:/var/lib/mysql'
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
+  backend:
+      build:
+        context: .
+        dockerfile: DockerfileBackend
+      command: python3 manage.py runserver 0.0.0.0:8000
+      volumes:
+        - ./backend:/app
+        - ./backend/media:/app/media
+      ports:
+        - "8000:8000"
+      depends_on:
+        database:
+          condition: service_healthy
+  mail:
+    image: maildev/maildev
+    ports:
+      - "1080:1080"
+      - "1025:1025"
+  rabbitmq:
+    image: rabbitmq:latest
+    ports:
+      - 5433:5433
+      - 5434:15674
+    environment:
+      RABBITMQ_DEFAULT_USER: 'rabbit'
+      RABBITMQ_DEFAULT_PASS: 'JKasdkfUgDf'
+    healthcheck:
+      test: ["CMD-SHELL", "rabbitmq-diagnostics -q ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 3
+  celery:
+    build:
+      context: .
+      dockerfile: DockerfileBackend
+    command: celery -A backend worker --loglevel=info
+    volumes:
+      - ./backend:/code
+      - ./backend/media:/code/media
+    depends_on:
+      database:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+  frontend:
+    build:
+      context: .
+      dockerfile: DockerfileFrontend
+    ports:
+      - "3000:3000"
+    command: npm start
+volumes:
+  database:
