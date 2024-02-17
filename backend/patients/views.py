@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets, mixins
+from .models import Patient
+from .serializers import PatientSerializer
 
-# Create your views here.
+class PatientViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
+    queryset = Patient.objects.all()
+    serializer_class = PatientSerializer
