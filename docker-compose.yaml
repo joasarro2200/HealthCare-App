@@ -38,10 +38,10 @@ services:
     image: rabbitmq:latest
     ports:
       - 5433:5433
-      - 5434:15674
+      - 5434:5434
     environment:
-      RABBITMQ_DEFAULT_USER: 'rabbit'
-      RABBITMQ_DEFAULT_PASS: 'JKasdkfUgDf'
+      RABBITMQ_DEFAULT_USER: 'root'
+      RABBITMQ_DEFAULT_PASS: '8DXFFGVSS'
     healthcheck:
       test: ["CMD-SHELL", "rabbitmq-diagnostics -q ping"]
       interval: 5s
@@ -53,8 +53,8 @@ services:
       dockerfile: DockerfileBackend
     command: celery -A backend worker --loglevel=info
     volumes:
-      - ./backend:/code
-      - ./backend/media:/code/media
+      - ./backend:/app
+      - ./backend/media:/app/media
     depends_on:
       database:
         condition: service_healthy
