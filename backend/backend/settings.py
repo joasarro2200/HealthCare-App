@@ -126,6 +126,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Email
+
+EMAIL_HOST = "mail"
+EMAIL_PORT = 1025
+
 # Rabbit and Celery
 
 CELERY_BROKER_URL = "amqp://{user}:{password}@{host_string}".format(
