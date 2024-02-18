@@ -1,0 +1,45 @@
+@import '../../styles/colors.css';
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 22px;
+
+    width: 100%;
+    background-color: white;
+    color: #fff;
+    padding: 4px 26px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.logo {
+    width: 86px;
+    height: 86px;
+}
+
+.linkText {
+    display: inline-block;
+    position: relative;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 32px;
+    padding: 0 0 6px;
+}
+
+.linkText:after {
+    content: "";
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0px;
+    transition: all .4s;
+}
+
+.linkText:hover:after {
+    width: 100%;
+    background: var(--primary-color);
+}
+  
