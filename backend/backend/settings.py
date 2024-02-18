@@ -128,6 +128,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email
 
+EMAIL_DEFAULT_FROM = config("EMAIL_DEFAULT_FROM", default="noreply@ligthit.io")
 EMAIL_HOST = "mail"
 EMAIL_PORT = 1025
 
