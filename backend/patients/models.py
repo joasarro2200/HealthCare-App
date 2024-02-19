@@ -8,7 +8,7 @@ class Patient(models.Model):
     email = models.EmailField()
     phone_number = models.CharField(max_length=15)
     document_photo = models.ImageField(
-        upload_to='patient_documents/',
+        upload_to='media/patient_documents/',
         validators=[
             FileExtensionValidator(allowed_extensions=["jpg"]),
         ],
