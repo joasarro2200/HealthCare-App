@@ -1,17 +1,18 @@
 @import '../../styles/colors.css';
 
-.header {
+header {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 22px;
 
-    width: 100%;
     background-color: white;
     color: #fff;
     padding: 4px 26px;
     font-size: 14px;
     text-decoration: none;
+
+    box-shadow: 2px 2px 2px grey;
 }
 
 .logo {
@@ -19,7 +20,7 @@
     height: 86px;
 }
 
-.linkText {
+.link {
     display: inline-block;
     position: relative;
     color: black;
@@ -29,7 +30,7 @@
     padding: 0 0 6px;
 }
 
-.linkText:after {
+.link:after {
     content: "";
     display: block;
     margin: auto;
@@ -38,7 +39,7 @@
     transition: all .4s;
 }
 
-.linkText:hover:after {
+.link:hover:after {
     width: 100%;
     background: var(--primary-color);
 }

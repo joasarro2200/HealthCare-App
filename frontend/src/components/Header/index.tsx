@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { HOME_ROUTE } from '../../constants/routes';
+import { HOME_ROUTE, LIST_PATIENTS_ROUTE } from '../../constants/routes';
 
 import appLogo from '../../assets/logo.svg';
 
@@ -8,14 +8,16 @@ import './styles.css';
 
 const Header: React.FC = () => {
   return (
-    <nav className='header'>
-      <Link className='link' to={HOME_ROUTE}>
+    <header>
+      <Link to={HOME_ROUTE}>
         <img src={appLogo} alt="App logo" className='logo' />
       </Link>
-      <Link className='link' to='/'>
-        <p className='linkText'>Patients</p>
-      </Link>
-    </nav>
+      <nav>
+        <Link className='link' to={LIST_PATIENTS_ROUTE}>
+          Patients
+        </Link>
+      </nav>
+    </header>
   );
 };
 
