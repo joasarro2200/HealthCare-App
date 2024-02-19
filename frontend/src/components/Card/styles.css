@@ -1,34 +1,54 @@
 @import '../../styles/colors.css';
 
 .card {
-    min-width: 640px;
+    width: 180px;
     display: flex;
     flex-direction: column;
     border-radius: 8px;
     padding: 32px;
     border: 2px var(--delimiter-color) solid;
+
+    @media only screen and (min-width: 768px) {
+        width: 640px;
+	}
 }
 
 .cardBasic {
     display: flex;
     flex-direction: row;
-    gap: 24px;
+    gap: 14px;
     align-self: flex-start;
+
+    @media only screen and (min-width: 768px) {
+        gap: 24px;
+	}
 }
 
 .cardImg {
     border-radius: 16px;
-    width: 160px;
-    height: 100px;
+    width: 60px;
+    height: 50px;
     box-shadow: rgb(6, 168, 183) 0px 0px 4px;
+
+    @media only screen and (min-width: 768px) {
+        width: 160px;
+        height: 100px;
+	}
 }
 
 .cardTitle {
     color: white;
-    font-size: 20px;
+    font-size: 12px;
     font-weight: 600;
-    line-height: 32px;
-    width: 200px;
+    line-height: 24px;
+    width: 50px;
+
+    @media only screen and (min-width: 768px) {
+        width: 200px;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 32px;
+	}
 }
 
 .showMore {
@@ -36,7 +56,23 @@
     justify-content: flex-end;
     align-self: baseline;
     border-radius: 10px;
-    min-width: 250px;
+
+    @media only screen and (min-width: 768px) {
+        min-width: 250px;
+	}
+}
+
+.showMoreButton {
+    width: 60px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+
+    @media only screen and (min-width: 768px) {
+        width: 130px;
+        font-size: 16px;
+        line-height: 24px;
+	}
 }
 
 .showMoreButton:hover, .showMoreButton:focus {
@@ -55,4 +91,10 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
+    font-size: 14px;
+    font-weight: 400;
+
+    @media only screen and (min-width: 768px) {
+        font-size: 20px;
+	}
 }
