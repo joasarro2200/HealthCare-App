@@ -8,7 +8,7 @@ from .tasks import send_welcome_email
 from .pagination import PatientsPagination
 
 class PatientViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
-    queryset = Patient.objects.all()
+    queryset = Patient.objects.all().order_by('id')
     serializer_class = PatientSerializer
     pagination_class = PatientsPagination
 

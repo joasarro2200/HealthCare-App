@@ -1,6 +1,7 @@
 @import '../../styles/colors.css';
 
 .card {
+    min-width: 640px;
     display: flex;
     flex-direction: column;
     border-radius: 8px;
@@ -27,6 +28,7 @@
     font-size: 20px;
     font-weight: 600;
     line-height: 32px;
+    width: 200px;
 }
 
 .showMore {

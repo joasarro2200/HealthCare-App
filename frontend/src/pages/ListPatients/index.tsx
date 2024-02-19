@@ -10,11 +10,12 @@ const ListPatients: React.FC = () => {
   const [nextUrl, setNextURL] =  useState<string| null>(null);
   const [prevUrl, setPrevURL] =  useState<string| null>(null);
 
-  const fetchData = async (url: string | null) => {
+  const fetchData =  async (url: string | null) => {
     await fetchPatients(url);
     const storedPatients = localStorage.getItem('patients');
     const next = localStorage.getItem('next');
     const previous = localStorage.getItem('previous');
+
     if (storedPatients !== null) {
       const parsedPatients = JSON.parse(storedPatients);
       setPatients(parsedPatients);
@@ -33,8 +34,13 @@ const ListPatients: React.FC = () => {
     fetchData(null);
   }, [])
 
-  console.log(nextUrl)
-  console.log(prevUrl)
+  const handleNextPage = () => {
+    fetchData(nextUrl);
+  }
+
+  const handlePrevPage = () => {
+    fetchData(prevUrl);
+  }
 
   return (
     <div className='mainContainer'>
@@ -43,6 +49,7 @@ const ListPatients: React.FC = () => {
         <div className='delimiterLine' />
           {patients?.map((patient) => 
             <Card 
+              key={patient.id}
               title={patient.name}
               imageSrc={patient.document_photo} 
               extraInfo={{
@@ -51,6 +58,11 @@ const ListPatients: React.FC = () => {
               }}
             />
           )}
+        <div className='delimiterLine' />
+        <div className='nextBeforeContainer'>
+          {prevUrl && <button onClick={handlePrevPage} type='button' className="previous round">&#8249;</button>}
+          {nextUrl && <button onClick={handleNextPage} type='button' className="next round">&#8250;</button>}
+        </div>
         </div>
     </div>
   );

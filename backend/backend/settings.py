@@ -139,7 +139,7 @@ MEDIA_ROOT = f"{BASE_DIR}/media"
 
 # Pagination
 
-LIST_PATIENTS_PAGE_SIZE = config("LIST_PATIENTS_PAGE_SIZE", default=10)
+LIST_PATIENTS_PAGE_SIZE = config("LIST_PATIENTS_PAGE_SIZE", default=5)
 
 # Email
 

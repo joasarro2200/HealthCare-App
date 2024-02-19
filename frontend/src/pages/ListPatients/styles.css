@@ -10,7 +10,7 @@
 .delimiterLine {
 	width: 100%;
 	border-top: 3px solid var(--delimiter-color);
-	margin-bottom: 40px;
+	margin: 40px 40px;
 }
 
 .patientsContainer {
@@ -31,4 +31,25 @@
 	align-self: flex-start;
 	font-size: 32px;
 	font-weight: 500;
+	margin-bottom: 0;
+}
+
+.nextBeforeContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 14px;
+}
+
+.nextBeforeContainer button {
+	border-radius: 50%;
+}
+
+.nextBeforeContainer button:hover {
+	border-radius: 50%;
+	border: 1px var(--delimiter-color) solid;
+}
+
+.nextBeforeContainer button:focus {
+	outline: none;
 }
