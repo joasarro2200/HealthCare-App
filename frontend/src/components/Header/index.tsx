@@ -9,10 +9,10 @@ import './styles.css';
 const Header: React.FC = () => {
   return (
     <header>
-      <Link to={HOME_ROUTE}>
-        <img src={appLogo} alt="App logo" className='logo' />
-      </Link>
       <nav>
+        <Link className='link' to={HOME_ROUTE}>
+          Home
+        </Link>
         <Link className='link' to={LIST_PATIENTS_ROUTE}>
           Patients
         </Link>

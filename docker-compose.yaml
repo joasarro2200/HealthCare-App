@@ -29,11 +29,13 @@ services:
       depends_on:
         database:
           condition: service_healthy
-  mail:
-    image: maildev/maildev
+  frontend:
+    build:
+      context: .
+      dockerfile: DockerfileFrontend
     ports:
-      - "1080:1080"
-      - "1025:1025"
+      - "3000:3000"
+    command: npm run dev
   rabbitmq:
     image: rabbitmq:latest
     ports:
@@ -60,12 +62,11 @@ services:
         condition: service_healthy
       rabbitmq:
         condition: service_healthy
-  frontend:
-    build:
-      context: .
-      dockerfile: DockerfileFrontend
+  mail:
+    image: maildev/maildev
     ports:
-      - "3000:3000"
-    command: npm run dev
+      - "1080:1080"
+      - "1025:1025"
+
 volumes:
   database:

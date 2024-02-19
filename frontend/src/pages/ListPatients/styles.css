@@ -1,7 +1,34 @@
+@import '../../styles/colors.css';
+
 .mainContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px 200px 0px 200px;
+}
+
+.delimiterLine {
+	width: 100%;
+	border-top: 3px solid var(--delimiter-color);
+	margin-bottom: 40px;
+}
+
+.patientsContainer {
+	width: 700px;
+	min-height: 700px;
+	align-self: center;
+	background-color: var(--secondary-color);
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	align-items: center;
     padding: 36px;
-    display: grid;
-	grid-template-columns: 1fr;
-	column-gap: 20px;
-	row-gap: 36px;
+	border-radius: 4px;
+}
+
+.title {
+	color: white;
+	align-self: flex-start;
+	font-size: 32px;
+	font-weight: 500;
 }

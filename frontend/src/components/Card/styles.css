@@ -1,6 +1,36 @@
 .card {
-    background-color: white;
-    width: 350px;
-    height: 350px;
-    box-shadow: 3px grey;
+    border-radius: 8px;
+    padding: 32px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-self: flex-start;
+    border: 2px var(--delimiter-color) solid;
+}
+
+.cardImg {
+    border-radius: 16px;
+    width: 160px;
+    height: 100px;
+    box-shadow: rgb(6, 168, 183) 0px 0px 4px;
+}
+
+.cardTitle {
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.showMore {
+    display: flex;
+    justify-content: flex-end;
+    align-self: baseline;
+    border-radius: 10px;
+    min-width: 250px;
+}
+
+.showMoreButton:hover, .showMoreButton:focus {
+    border: 1px var(--delimiter-color) solid;
+    outline: none;
 }

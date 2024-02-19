@@ -1,4 +1,6 @@
 :root {
-    --primary-color: #0f73c0;
+    --primary-color: rgb(6, 18, 18);
+    --secondary-color: rgb(10, 30, 33);
+    --delimiter-color: rgb(14, 63, 71);
 }
   

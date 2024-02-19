@@ -1,46 +1,52 @@
 @import '../../styles/colors.css';
 
 header {
+    background-color: var(--secondary-color);
+    padding: 10px 26px;
+    text-decoration: none;
+}
+
+nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 22px;
-
-    background-color: white;
-    color: #fff;
-    padding: 4px 26px;
-    font-size: 14px;
-    text-decoration: none;
-
-    box-shadow: 2px 2px 2px grey;
+    gap: 32px;
 }
 
 .logo {
     width: 86px;
     height: 86px;
+    fill: white;
 }
 
 .link {
     display: inline-block;
     position: relative;
-    color: black;
+    color: white;
     text-decoration: none;
     font-size: 18px;
+    font-weight: 500;
     line-height: 32px;
     padding: 0 0 6px;
 }
 
+
 .link:after {
+    color: white;
     content: "";
     display: block;
     margin: auto;
-    height: 3px;
+    height: 1px;
     width: 0px;
     transition: all .4s;
 }
 
+.link:hover {
+    color: white;
+}
+
 .link:hover:after {
     width: 100%;
-    background: var(--primary-color);
+    background: white;
 }
   

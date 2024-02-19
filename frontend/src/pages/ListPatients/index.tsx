@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './styles.css';
 import { Patient } from '../../constants/interfaces';
 import { fetchPatients } from '../../services/patientService';
+import { PATIENTS_PAGE_TITLE } from '../../constants/common';
+import Card from '../../components/Card';
 
 const ListPatients: React.FC = () => {
   const [patients, setPatients] =  useState<Patient[] | null>(null);
@@ -36,12 +38,16 @@ const ListPatients: React.FC = () => {
 
   return (
     <div className='mainContainer'>
-        {patients?.map((patient) => 
-          <div>
-            <img src={patient.document_photo} alt='document' />
-            <p>{patient.name}</p>
-          </div>
-        )}
+      <div className='patientsContainer'>
+        <h1 className='title'>{PATIENTS_PAGE_TITLE}</h1>
+        <div className='delimiterLine' />
+          {patients?.map((patient) => 
+            <Card 
+              title={patient.name}
+              imageSrc={patient.document_photo} 
+            />
+          )}
+        </div>
     </div>
   );
 };
