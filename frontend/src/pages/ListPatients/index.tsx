@@ -45,6 +45,10 @@ const ListPatients: React.FC = () => {
             <Card 
               title={patient.name}
               imageSrc={patient.document_photo} 
+              extraInfo={{
+                Email: patient.email,
+                Phone: patient.phone_number,
+              }}
             />
           )}
         </div>

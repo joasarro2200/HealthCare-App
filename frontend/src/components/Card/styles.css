@@ -1,11 +1,18 @@
+@import '../../styles/colors.css';
+
 .card {
+    display: flex;
+    flex-direction: column;
     border-radius: 8px;
     padding: 32px;
+    border: 2px var(--delimiter-color) solid;
+}
+
+.cardBasic {
     display: flex;
     flex-direction: row;
     gap: 24px;
     align-self: flex-start;
-    border: 2px var(--delimiter-color) solid;
 }
 
 .cardImg {
@@ -33,4 +40,17 @@
 .showMoreButton:hover, .showMoreButton:focus {
     border: 1px var(--delimiter-color) solid;
     outline: none;
+}
+
+.cardExtra {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.extraEntry {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
