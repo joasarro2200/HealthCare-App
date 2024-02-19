@@ -126,6 +126,10 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Pagination
+
+LIST_PATIENTS_PAGE_SIZE = config("LIST_PATIENTS_PAGE_SIZE", default=10)
+
 # Email
 
 EMAIL_DEFAULT_FROM = config("EMAIL_DEFAULT_FROM", default="noreply@ligthit.io")

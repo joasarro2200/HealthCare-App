@@ -1,13 +1,15 @@
 from rest_framework import viewsets, mixins, status
 from rest_framework.response import Response
+from django.conf import settings
 
 from .models import Patient
 from .serializers import PatientSerializer
 from .tasks import send_welcome_email
 
-class PatientViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
+class PatientViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
     queryset = Patient.objects.all()
     serializer_class = PatientSerializer
+    pagination_size = settings.LIST_PATIENTS_PAGE_SIZE
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
