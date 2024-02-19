@@ -29,12 +29,43 @@
 	}
 }
 
+.titleAndButtonContainer {
+	width: 230px;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	align-self: baseline;
+	justify-content: space-between;
+
+	@media only screen and (min-width: 768px) {
+		width: 700px;
+	}
+}
+
 .title {
 	color: white;
 	align-self: flex-start;
 	font-size: 32px;
 	font-weight: 500;
-	margin-bottom: 0;
+	margin: 0;
+}
+
+.addLink {
+	border-radius: 10px;
+	height: 40px;
+	background-color: var(--delimiter-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+
+	@media only screen and (min-width: 768px) {
+		min-width: 100px;
+	}
+}
+
+.addLink:hover {
+	color: white;
 }
 
 .nextBeforeContainer {
@@ -49,7 +80,6 @@
 }
 
 .nextBeforeContainer button:hover {
-	border-radius: 50%;
 	border: 1px var(--delimiter-color) solid;
 }
 

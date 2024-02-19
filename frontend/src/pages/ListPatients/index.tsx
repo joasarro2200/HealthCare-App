@@ -4,6 +4,8 @@ import { Patient } from '../../constants/interfaces';
 import { fetchPatients } from '../../services/patientService';
 import { PATIENTS_PAGE_TITLE } from '../../constants/common';
 import Card from '../../components/Card';
+import { Link } from 'react-router-dom';
+import { CREATE_PATIENTS_ROUTE, LIST_PATIENTS_ROUTE } from '../../constants/routes';
 
 const ListPatients: React.FC = () => {
   const [patients, setPatients] =  useState<Patient[] | null>(null);
@@ -45,7 +47,14 @@ const ListPatients: React.FC = () => {
   return (
     <div className='mainContainer'>
       <div className='patientsContainer'>
-        <h1 className='title'>{PATIENTS_PAGE_TITLE}</h1>
+        <div className='titleAndButtonContainer'>
+          <h1 className='title'>{PATIENTS_PAGE_TITLE}</h1>
+          <nav>
+            <Link className='addLink' to={CREATE_PATIENTS_ROUTE}>
+              Add
+            </Link>
+          </nav>
+        </div>
         <div className='delimiterLine' />
           {patients?.map((patient) => 
             <Card 
@@ -63,7 +72,7 @@ const ListPatients: React.FC = () => {
           {prevUrl && <button onClick={handlePrevPage} type='button' className="previous round">&#8249;</button>}
           {nextUrl && <button onClick={handleNextPage} type='button' className="next round">&#8250;</button>}
         </div>
-        </div>
+      </div>
     </div>
   );
 };

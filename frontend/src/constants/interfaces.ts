@@ -6,3 +6,10 @@ export interface Patient {
     document_photo: string;
     phone_number: string;
 }
+
+export interface IFormInput {
+    name: string,
+    email: string,
+    phone: string,
+    document: File;
+}

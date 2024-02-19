@@ -1,0 +1,29 @@
+@import '../../../styles/colors.css';
+
+.fieldContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.dragNDropContainer {
+    cursor: pointer;
+	width: 432px;
+    height: 48px;
+    background-color: var(--delimiter-color);
+    border-radius: 10px;
+    border: 0px;
+	padding: 0px 8px;
+    color: gray;
+    font-size: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.documentImage {
+	width: 200px;
+	height: 100px;
+}
+

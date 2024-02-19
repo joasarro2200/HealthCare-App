@@ -1,0 +1,28 @@
+@import '../../../styles/colors.css';
+
+.fieldContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.fieldContainer input, .fieldContainerSmall input {
+	width: 432px;
+    height: 48px;
+    opacity: 1;
+    outline: none;
+    background-color: var(--delimiter-color);
+    border-radius: 10px;
+    border: 0px;
+	padding: 0px 8px;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0px;
+    text-align: left;
+    text-transform: none;
+}
+
+.fieldContainerSmall input {
+	width: 300px;
+}

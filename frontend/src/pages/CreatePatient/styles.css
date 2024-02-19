@@ -1,0 +1,18 @@
+@import '../../styles/colors.css';
+
+.createTitle {
+	color: white;
+	font-size: 32px;
+	font-weight: 500;
+	margin: 0;
+}
+
+.createSubtitle {
+	margin: 0;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
