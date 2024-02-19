@@ -1,3 +1,4 @@
+import { Patient } from "../constants/interfaces";
 import { PATIENTS_URL } from "../constants/routes";
 
 export const fetchPatients = async (url:string | null) => {
@@ -13,3 +14,24 @@ export const fetchPatients = async (url:string | null) => {
     console.log(e)
   }
 }
+
+export const createPatient = async (data: Patient) => {
+  try {
+    const formData = new FormData();
+    formData.append('name', data.name);
+    formData.append('email', data.email);
+    formData.append('phone_number', data.phone_number);
+    formData.append('address', data.address);
+    formData.append('document_photo', data.document_photo);
+
+    const response = await fetch(PATIENTS_URL, {
+      method: 'POST',
+      body: formData,
+    });
+    
+    console.log(response);
+  } catch (e) {
+    console.log(e);
+  }
+};
+

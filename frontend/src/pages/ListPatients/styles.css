@@ -51,6 +51,7 @@
 }
 
 .addLink {
+	width: 50px;
 	border-radius: 10px;
 	height: 40px;
 	background-color: var(--delimiter-color);
@@ -85,4 +86,12 @@
 
 .nextBeforeContainer button:focus {
 	outline: none;
+}
+
+.infoText {
+	color: white;
+	align-self: flex-start;
+	font-size: 24px;
+	font-weight: 500;
+	margin: 0;
 }

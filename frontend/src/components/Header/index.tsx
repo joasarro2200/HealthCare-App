@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { HOME_ROUTE, LIST_PATIENTS_ROUTE } from '../../constants/routes';
 
-import appLogo from '../../assets/logo.svg';
-
 import './styles.css';
 
 const Header: React.FC = () => {

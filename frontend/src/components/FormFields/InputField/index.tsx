@@ -9,10 +9,10 @@ import './styles.css';
 interface InputFieldProps {
   register: UseFormRegister<IFormInput>;
   labelText: string;
-  fieldName: "name" | "email" | "phone" | "document";
+  fieldName: "name" | "email" | "phone" | "document" | "address";
   placeholder: string;
-  validation: ValidationField;
-  error: string;
+  validation?: ValidationField;
+  error: string | undefined;
   small: boolean;
 }
 
@@ -26,7 +26,7 @@ const InputField: React.FC<InputFieldProps> = (
             {...register(fieldName, validation)}
             placeholder={placeholder}
         />
-        {error.length > 0 && <p className="error-message">{error}</p>}
+        {error !== undefined && error.length > 0 && <p className="error-message">{error}</p>}
     </div>
   );
 };

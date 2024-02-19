@@ -5,7 +5,7 @@ import { fetchPatients } from '../../services/patientService';
 import { PATIENTS_PAGE_TITLE } from '../../constants/common';
 import Card from '../../components/Card';
 import { Link } from 'react-router-dom';
-import { CREATE_PATIENTS_ROUTE, LIST_PATIENTS_ROUTE } from '../../constants/routes';
+import { CREATE_PATIENTS_ROUTE } from '../../constants/routes';
 
 const ListPatients: React.FC = () => {
   const [patients, setPatients] =  useState<Patient[] | null>(null);
@@ -56,18 +56,22 @@ const ListPatients: React.FC = () => {
           </nav>
         </div>
         <div className='delimiterLine' />
+          {patients?.length === 0 && <span className='infoText'>No patients yet</span>}
           {patients?.map((patient) => 
-            <Card 
-              key={patient.id}
-              title={patient.name}
-              imageSrc={patient.document_photo} 
-              extraInfo={{
-                Email: patient.email,
-                Phone: patient.phone_number,
-              }}
-            />
+            <>
+              <Card
+                key={patient.id}
+                title={patient.name}
+                imageSrc={typeof patient.document_photo === 'string' ? patient.document_photo : ''}
+                extraInfo={{
+                  Email: patient.email,
+                  Phone: patient.phone_number,
+                  Address: patient.address,
+                }} 
+              />
+              <div className='delimiterLine' />
+            </>
           )}
-        <div className='delimiterLine' />
         <div className='nextBeforeContainer'>
           {prevUrl && <button onClick={handlePrevPage} type='button' className="previous round">&#8249;</button>}
           {nextUrl && <button onClick={handleNextPage} type='button' className="next round">&#8250;</button>}

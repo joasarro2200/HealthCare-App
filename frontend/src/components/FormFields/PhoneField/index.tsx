@@ -8,7 +8,7 @@ import './styles.css';
 
 interface PhoneFieldProps {
   control: any;
-  error: string;
+  error: string | undefined;
 }
 
 const PhoneField: React.FC<PhoneFieldProps> = ({ control, error }) => {
@@ -28,7 +28,7 @@ const PhoneField: React.FC<PhoneFieldProps> = ({ control, error }) => {
             />
           )}
         />
-        {error.length > 0 && (
+        {error !== undefined && error.length > 0 && (
           <p className="error-message">{error}</p>
         )}
     </div>

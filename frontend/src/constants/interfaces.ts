@@ -1,9 +1,9 @@
 export interface Patient {
-    id: string;
+    id?: string;
     name: string;
     address: string;
     email: string;
-    document_photo: string;
+    document_photo: File | string;
     phone_number: string;
 }
 
@@ -12,4 +12,5 @@ export interface IFormInput {
     email: string,
     phone: string,
     document: File;
+    address: string;
 }
