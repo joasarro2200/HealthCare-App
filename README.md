@@ -1,7 +1,7 @@
 ## Set up and run
 
-Build the images: docker-compose build
-Run app: docker-compose up
+Build the images: docker-compose build (maybe you need sudo)
+Run app: docker-compose up (maybe you need sudo)
 
 Be sure to apply django migrations: python manage.py migrate (in backend container)
 
