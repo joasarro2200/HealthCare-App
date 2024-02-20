@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FieldError, useForm } from 'react-hook-form';
 import { IFormInput, Patient } from '../../constants/interfaces';
 import { CREATE_PATIENT_ADDRESS_FIELD, CREATE_PATIENT_EMAIL_FIELD, CREATE_PATIENT_NAME_FIELD } from '../../constants/common';
@@ -6,10 +7,13 @@ import InputField from '../../components/FormFields/InputField';
 import PhoneField from '../../components/FormFields/PhoneField';
 import FileField from '../../components/FormFields/FileField';
 
+import { createPatient } from '../../services/patientService';
+import Modal from '../../components/Modal';
+import { LIST_PATIENTS_ROUTE } from '../../constants/routes';
+
 import './styles.css';
 import '../ListPatients/styles.css';
 import 'react-phone-number-input/style.css'
-import { createPatient } from '../../services/patientService';
 
 const nameValidation = { 
   required: true,
@@ -34,6 +38,13 @@ const CreatePatient: React.FC = () => {
     clearErrors 
   } = useForm<IFormInput>();
 
+  const [isSubmiting, setIsSubmiting] = useState<boolean>(false);
+  const [succeedCreate, setSucceedCreate] = useState<boolean>(false);
+  const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
+  const [createPatientTextError, setCreatePatientTextError] = useState<string | null>(null);
+
+  const navigate = useNavigate();
+
   const onSubmit = async (data: IFormInput) => {
     const patientBody: Patient = {
       name: data.name,
@@ -42,9 +53,30 @@ const CreatePatient: React.FC = () => {
       document_photo: data.document,
       address: data.address,
     }
-    console.log(patientBody);
+    setIsSubmiting(true);
     const response = await createPatient(patientBody);
-    console.log(response)
+    setIsSubmiting(false);
+
+    if (response === undefined) {
+      setSucceedCreate(false);
+      setIsOpenModal(true);
+      setCreatePatientTextError('Server unavailable');
+      return;
+    }
+
+    if (response.ok) {
+      const storedPatients = localStorage.getItem('patients');
+      if (storedPatients !== null) {
+        const parsedPatients = JSON.parse(storedPatients);
+        parsedPatients.push(patientBody);
+        localStorage.setItem('patients', JSON.stringify(parsedPatients));
+      }
+    } else {
+      setCreatePatientTextError(response?.statusText);
+    }
+
+    setSucceedCreate(response.ok);
+    setIsOpenModal(true);
   };
 
   const getError = (fieldName: string, errorObj: FieldError) => {
@@ -70,6 +102,13 @@ const CreatePatient: React.FC = () => {
         return '';
     }
   };
+
+  const onCloseModalHandler = () => {
+    if (succeedCreate) {
+      return navigate(LIST_PATIENTS_ROUTE);
+    }
+    setIsOpenModal(false);
+  }
 
   return (
     <div className='mainContainer'>
@@ -119,9 +158,20 @@ const CreatePatient: React.FC = () => {
             setError={setError}
             clearErrors={clearErrors}
           />
-          <button type="submit">Submit</button>
+          <button 
+            type="submit"
+            disabled={isSubmiting}
+          >
+            {isSubmiting ? <i className="fa fa-spinner fa-spin" /> : 'Submit'}
+          </button>
       </form>
       </div>
+      <Modal
+        onCloseHandler={onCloseModalHandler}
+        isSuccess={succeedCreate}
+        message={succeedCreate ? 'Patient succesfully registered!' : `An error occured: ${createPatientTextError}`}
+        isOpen={isOpenModal}
+      />
     </div>
   );
 };

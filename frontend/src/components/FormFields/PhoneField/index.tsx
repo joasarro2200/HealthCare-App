@@ -29,7 +29,7 @@ const PhoneField: React.FC<PhoneFieldProps> = ({ control, error }) => {
           )}
         />
         {error !== undefined && error.length > 0 && (
-          <p className="error-message">{error}</p>
+          <p className="errorMessage">{error}</p>
         )}
     </div>
   );

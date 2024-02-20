@@ -26,7 +26,7 @@ const InputField: React.FC<InputFieldProps> = (
             {...register(fieldName, validation)}
             placeholder={placeholder}
         />
-        {error !== undefined && error.length > 0 && <p className="error-message">{error}</p>}
+        {error !== undefined && error.length > 0 && <p className="errorMessage">{error}</p>}
     </div>
   );
 };

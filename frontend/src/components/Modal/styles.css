@@ -1,0 +1,68 @@
+@import '../../styles/colors.css';
+
+.modalOverlay {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.modal {
+  margin-top: 100px;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  text-align: center;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalOverlay.show {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.modal img {
+  height: 25px;
+  max-width: 25px;
+  fill: red;
+}
+
+.modalButton {
+  margin-top: auto;
+  width: 120px;
+  align-self: center;
+}
+
+.modalButton:hover {
+  border: 1px solid var(--delimiter-color);
+}
+
+.modalButton:focus {
+  border: none;
+}
+
+.modalMessage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.modalMessage p {
+  overflow-wrap: break-word;
+  color: white;
+}

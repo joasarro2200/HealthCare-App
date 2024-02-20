@@ -10,7 +10,7 @@
     cursor: pointer;
 	width: 432px;
     height: 48px;
-    background-color: var(--delimiter-color);
+    background-color: var(--input-color);
     border-radius: 10px;
     border: 0px;
 	padding: 0px 8px;
@@ -26,4 +26,5 @@
 	width: 200px;
 	height: 100px;
     margin-top: 20px;
+    align-self: center;
 }

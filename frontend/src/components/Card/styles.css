@@ -31,7 +31,7 @@
     box-shadow: rgb(6, 168, 183) 0px 0px 4px;
 
     @media only screen and (min-width: 768px) {
-        width: 160px;
+        width: 120px;
         height: 100px;
 	}
 }

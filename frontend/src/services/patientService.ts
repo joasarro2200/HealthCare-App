@@ -28,8 +28,7 @@ export const createPatient = async (data: Patient) => {
       method: 'POST',
       body: formData,
     });
-    
-    console.log(response);
+    return response;
   } catch (e) {
     console.log(e);
   }

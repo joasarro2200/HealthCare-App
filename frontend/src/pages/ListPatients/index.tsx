@@ -56,22 +56,22 @@ const ListPatients: React.FC = () => {
           </nav>
         </div>
         <div className='delimiterLine' />
-          {patients?.length === 0 && <span className='infoText'>No patients yet</span>}
-          {patients?.map((patient) => 
-            <>
-              <Card
-                key={patient.id}
-                title={patient.name}
-                imageSrc={typeof patient.document_photo === 'string' ? patient.document_photo : ''}
-                extraInfo={{
-                  Email: patient.email,
-                  Phone: patient.phone_number,
-                  Address: patient.address,
-                }} 
-              />
-              <div className='delimiterLine' />
-            </>
-          )}
+        {patients?.length === 0 && <span className='infoText'>No patients yet</span>}
+        {patients?.map((patient) => 
+          <>
+            <Card
+              key={patient.id}
+              title={patient.name}
+              imageSrc={typeof patient.document_photo === 'string' ? patient.document_photo : ''}
+              extraInfo={{
+                Email: patient.email,
+                Phone: patient.phone_number,
+                Address: patient.address,
+              }} 
+            />
+          </>
+        )}
+        {patients?.length === 0 && <div className='delimiterLine' />}
         <div className='nextBeforeContainer'>
           {prevUrl && <button onClick={handlePrevPage} type='button' className="previous round">&#8249;</button>}
           {nextUrl && <button onClick={handleNextPage} type='button' className="next round">&#8250;</button>}

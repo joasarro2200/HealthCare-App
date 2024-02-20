@@ -11,7 +11,7 @@
     height: 48px;
     opacity: 1;
     outline: none;
-    background-color: var(--delimiter-color);
+    background-color: var(--input-color);
     border-radius: 10px;
     border: 0px;
 	padding: 0px 8px;
@@ -25,4 +25,9 @@
 
 .fieldContainerSmall input {
 	width: 300px;
+}
+
+.errorMessage {
+    font-size: 14px;
+    font-weight: 300;
 }

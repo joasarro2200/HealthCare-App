@@ -1,6 +1,7 @@
 :root {
     --primary-color: rgb(6, 18, 18);
     --secondary-color: rgb(10, 30, 33);
+    --input-color: rgba(70, 90, 126, 0.4);
     --delimiter-color: rgb(14, 63, 71);
 }
   

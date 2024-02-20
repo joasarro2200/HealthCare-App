@@ -4,5 +4,5 @@ backend/.env
 backend/db.sqlite3
 backend/backend/__pycache__
 backend/patients/__pycache__
-backend/patient_documents
+backend/media/patient_documents
 backend/patients/migrations/__pycache__

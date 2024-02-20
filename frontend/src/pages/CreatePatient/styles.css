@@ -21,3 +21,14 @@ form button {
 	margin-top: 30px;
 	background-color: #1a1a1a;
 }
+
+form button:hover {
+	border: 1px solid var(--delimiter-color);
+}
+
+form button:disabled {
+	margin-top: 30px;
+	border: none;
+	cursor: wait;
+}
+
