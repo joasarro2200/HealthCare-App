@@ -1,6 +1,5 @@
 venv/
 .DS_Store
-backend/.env
 backend/db.sqlite3
 backend/backend/__pycache__
 backend/patients/__pycache__
