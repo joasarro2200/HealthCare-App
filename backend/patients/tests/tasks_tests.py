@@ -11,7 +11,5 @@ class SendEmailTaskTest(TestCase):
         send_welcome_email(patient_name, patient_email)
         self.assertEqual(len(mail.outbox), 1)
         email = mail.outbox[0]
-        self.assertEqual(
-            email.subject, "Patient registration confirmation"
-        )
+        self.assertEqual(email.subject, "Patient registration confirmation")
         self.assertEqual(email.to, [patient_email])

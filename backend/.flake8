@@ -1,6 +1,6 @@
 [flake8]
-exclude = .git,_pycache_,./venv,.vscode,.hypothesis,.pytest-cache,migrations
+exclude = .git,_pycache_,./venv,.vscode,.hypothesis,.pytest-cache,migrations,./patients/tests/__init__.py
 max-line-length = 120
 per-file-ignores =
     *: E203
-    backend/settings_*: F403, F405
+    backend/settings: F403, F405

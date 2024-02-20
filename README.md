@@ -24,10 +24,14 @@ Frontend: <http://localhost:3000/>
 - Flake8
 - Black
 
-Check lint and format: ./verify (in backend folder)
+Check lint, format and run tests: ./verify_backend
 
 ## Frontend linting
 
 - Eslint
 
-Check lint: npm run lint
+Check lint: ./verify_frontend
+
+## Backend tests
+
+python manage.py test (in backend folder)

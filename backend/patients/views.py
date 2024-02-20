@@ -26,7 +26,8 @@ class PatientViewSet(
         try:
             send_welcome_email.delay(instance.name, instance.email)
         except kombu.exceptions.OperationalError:
-            logger.info(f'Registration email for {request.data["name"]} could not be sent')
+            logger.info(
+                f'Registration email for {request.data["name"]} could not be sent'
+            )
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
-

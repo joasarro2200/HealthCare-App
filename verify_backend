@@ -1,0 +1,4 @@
+cd backend
+python manage.py test
+flake8
+python -m black ./ 

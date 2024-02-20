@@ -67,14 +67,16 @@ class PatientViewSetCreateTestCase(TestCase):
                 self.data["document_photo"] = infile
                 response = self.client.post(self.url, self.data, format="multipart")
             self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-            self.assertEqual(response.json(), {"email": ["Enter a valid email address."]})
+            self.assertEqual(
+                response.json(), {"email": ["Enter a valid email address."]}
+            )
             self.assertEqual(Patient.objects.count(), 0)
             self.assertEqual(mock_task.call_count, 0)
 
     def test_create_patient_invalid_empty_photo(self):
         with patch("patients.tasks.send_welcome_email.delay") as mock_task:
             response = self.client.post(self.url, self.data, format="multipart")
-            
+
             self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
             self.assertEqual(
                 response.json(),
