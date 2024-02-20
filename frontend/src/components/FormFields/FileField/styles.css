@@ -8,7 +8,7 @@
 
 .dragNDropContainer {
     cursor: pointer;
-	width: 432px;
+	max-width: 250px;
     height: 48px;
     background-color: var(--input-color);
     border-radius: 10px;
@@ -20,6 +20,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    @media only screen and (min-width: 768px) {
+		max-width: 500px;
+	}
 }
 
 .documentImage {
