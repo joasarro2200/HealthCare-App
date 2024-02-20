@@ -8,6 +8,7 @@ Be sure to apply django migrations: python manage.py migrate (in backend contain
 ## Links
 
 backend: <http://localhost:8000/>
+
 frontend: <http://localhost:3000/>
 
 ## Backend linting and formatter
