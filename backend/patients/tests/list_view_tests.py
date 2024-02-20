@@ -4,7 +4,7 @@ from django.test.utils import override_settings
 from django.urls import reverse
 from rest_framework.test import APIClient
 
-from .factories import PatientFactory
+from ..factories import PatientFactory
 
 
 def patients_json(patients):
@@ -25,7 +25,7 @@ def patients_json(patients):
 
 @override_settings(MEDIA_ROOT=tempfile.mkdtemp())
 @override_settings(MEDILIST_PATIENTS_PAGE_SIZEA_ROOT=10)
-class PatientViewSetTestCase(TestCase):
+class PatientViewSetListTestCase(TestCase):
     def setUp(self):
         self.client = APIClient()
         self.url = reverse("patients-list")

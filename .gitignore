@@ -6,3 +6,4 @@ backend/backend/__pycache__
 backend/patients/__pycache__
 backend/media/patient_documents
 backend/patients/migrations/__pycache__
+backend/patients/tests/__pycache__
