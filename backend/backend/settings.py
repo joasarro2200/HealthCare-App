@@ -132,6 +132,50 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# Logging
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "simple": {
+            "format": "%(levelname)s | %(name)s | %(filename)s | %(funcName)s | "
+            "%(lineno)d | %(message)s"
+        },
+    },
+    "filters": {
+        "require_debug_false": {"()": "django.utils.log.RequireDebugFalse"},
+    },
+    "handlers": {
+        "console": {
+            "level": config("LOG_LEVEL_CONSOLE", default="INFO"),
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+        },
+    },
+    "loggers": {
+        "backend": {
+            "handlers": [
+                "console",
+            ],
+            "level": "DEBUG",
+            "propagate": True,
+        },
+        "django": {
+            "handlers": [
+                "console",
+            ],
+            "level": "INFO",
+            "propagate": True,
+        },
+        "django.db.backends": {
+            "handlers": ["console"],
+            "level": "ERROR",
+            "propagate": False,
+        },
+    },
+}
+
 # Media
 
 MEDIA_URL = "/media/"
