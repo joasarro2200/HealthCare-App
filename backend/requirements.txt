@@ -4,5 +4,6 @@ celery>=5.3.5
 Pillow>=10.1.0
 python-decouple>=3.8
 django-cors-headers>=3.10.0 
+factory-boy
 Flake8
 black
