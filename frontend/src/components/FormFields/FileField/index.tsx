@@ -28,7 +28,7 @@ const FileField: React.FC<FileFieldProps> = ({register, setValue, error, setErro
       // Archivo no permitido
       setError('document', { type: 'custom', message: 'File extension must be .jpg' });
     }
-  }, [setValue]);
+  }, []);
 
   const {getRootProps, getInputProps} = useDropzone({onDrop})
 

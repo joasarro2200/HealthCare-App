@@ -1,13 +1,14 @@
 import React from 'react';
 
-import { Controller } from 'react-hook-form';
+import { Control, Controller } from 'react-hook-form';
 import PhoneInput, { isPossiblePhoneNumber } from "react-phone-number-input";
 import { CREATE_PATIENT_PHONE_FIELD } from '../../../constants/common';
 
 import './styles.css';
+import { IFormInput } from '../../../constants/interfaces';
 
 interface PhoneFieldProps {
-  control: any;
+  control: Control<IFormInput, any, IFormInput>;
   error: string | undefined;
 }
 

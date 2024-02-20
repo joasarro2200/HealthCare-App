@@ -20,6 +20,7 @@ Frontend: <http://localhost:3000/>
 - Celery + RabbitMq: Async tasks (and scheduled tasks)
 
 ## Backend linting and formatter
+
 - Flake8
 - Black
 
@@ -28,3 +29,5 @@ Check lint and format: ./verify (in backend folder)
 ## Frontend linting
 
 - Eslint
+
+Check lint: npm run lint

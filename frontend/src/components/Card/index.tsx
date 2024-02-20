@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 
 import './styles.css';
-import { GenericObject } from '../../constants/types';
-
 
 interface CardProps {
   imageSrc: string;
   title: string;
-  extraInfo: GenericObject;
+  extraInfo: object;
 }
 
 const Card: React.FC<CardProps> = ({ imageSrc, title, extraInfo }) => {
