@@ -7,13 +7,13 @@ Be sure to apply django migrations: python manage.py migrate (in backend contain
 
 ## Links
 
-backend: <http://localhost:8000/>
+Backend: <http://localhost:8000/>
 
-frontend: <http://localhost:3000/>
+Frontend: <http://localhost:3000/>
 
 ## Structure
 
-- Backend: Django App
+- Backend: Django Rest Framework App
 - Frontend: React App + Typescript
 - MySQL: Database
 - Maildev: Mail server
