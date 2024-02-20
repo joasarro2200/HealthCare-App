@@ -1,5 +1,12 @@
 @import '../../styles/colors.css';
 
+.mainContainer {
+	background-color: var(--primary-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .createTitle {
 	color: white;
 	font-size: 32px;

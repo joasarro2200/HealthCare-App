@@ -63,6 +63,7 @@
 }
 
 .showMoreButton {
+    background-color: #1a1a1a;
     width: 60px;
     font-size: 12px;
     font-weight: 400;
@@ -88,6 +89,7 @@
 }
 
 .extraEntry {
+    color: white;
     display: flex;
     flex-direction: row;
     gap: 10px;

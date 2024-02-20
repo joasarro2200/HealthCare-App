@@ -1,3 +1,4 @@
 .mainContainer {
+    background-color: var(--primary-color);
     padding: 26px;
 }
