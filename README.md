@@ -2,12 +2,12 @@
 
 -Add an `.env` file. There is an `.env.example` with the values used for this demo. Use those. 
 
--Build the images: docker-compose build (maybe you need sudo)
+-Build the images: `docker-compose build` (maybe you need sudo)
 
--Run app: docker-compose up (maybe you need sudo)
+-Run app: `docker-compose up` (maybe you need sudo)
 
 
-Be sure to apply django migrations: python manage.py migrate (in backend container)
+Be sure to apply django migrations: `python manage.py migrate` (in backend container)
 
 ## Links
 
@@ -28,17 +28,17 @@ Frontend: <http://localhost:3000/>
 - Flake8
 - Black
 
-Check lint, format and run tests: ./verify_backend
+Check lint, format and run tests: `./verify_backend`
 
 ## Frontend linting
 
 - Eslint
 
-Check lint: ./verify_frontend
+Check lint: `./verify_frontend`
 
 ## Backend tests
 
-python manage.py test (in backend folder)
+`python manage.py test` (in backend folder)
 
 ## TO DO
 
