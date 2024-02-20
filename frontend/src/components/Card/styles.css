@@ -63,7 +63,7 @@
 }
 
 .showMoreButton {
-    background-color: #1a1a1a;
+    background-color: var(--delimiter-color);
     color: white;
     width: 60px;
     font-size: 12px;
