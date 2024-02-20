@@ -14,7 +14,7 @@ frontend: <http://localhost:3000/>
 - Flake8
 - Black
 
-Check lint and format: ./verify
+Check lint and format: ./verify (in backend folder)
 
 ## Frontend linting
 
