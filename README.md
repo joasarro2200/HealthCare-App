@@ -35,3 +35,7 @@ Check lint: ./verify_frontend
 ## Backend tests
 
 python manage.py test (in backend folder)
+
+## TO DO
+
+-Use go in order to set up and run the project.
