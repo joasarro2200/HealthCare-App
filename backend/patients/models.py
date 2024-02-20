@@ -1,7 +1,8 @@
 from django.db import models
-from django.core.validators import  FileExtensionValidator
+from django.core.validators import FileExtensionValidator
 
 from .validators import validate_name
+
 
 class Patient(models.Model):
     name = models.CharField(max_length=255, validators=[validate_name])
@@ -9,7 +10,7 @@ class Patient(models.Model):
     phone_number = models.CharField(max_length=15)
     address = models.CharField(max_length=255, blank=True)
     document_photo = models.ImageField(
-        upload_to='patient_documents/',
+        upload_to="patient_documents/",
         validators=[
             FileExtensionValidator(allowed_extensions=["jpg"]),
         ],

@@ -1,0 +1,6 @@
+[flake8]
+exclude = .git,_pycache_,./venv,.vscode,.hypothesis,.pytest-cache,migrations
+max-line-length = 120
+per-file-ignores =
+    *: E203
+    backend/settings_*: F403, F405

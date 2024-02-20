@@ -1,14 +1,16 @@
 from rest_framework import viewsets, mixins, status
 from rest_framework.response import Response
-from django.conf import settings
 
 from .models import Patient
 from .serializers import PatientSerializer
 from .tasks import send_welcome_email
 from .pagination import PatientsPagination
 
-class PatientViewSet(mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
-    queryset = Patient.objects.all().order_by('-id')
+
+class PatientViewSet(
+    mixins.CreateModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet
+):
+    queryset = Patient.objects.all().order_by("-id")
     serializer_class = PatientSerializer
     pagination_class = PatientsPagination
 

@@ -8,23 +8,32 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('patients', '0001_initial'),
+        ("patients", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='patient',
-            name='address',
+            model_name="patient",
+            name="address",
             field=models.CharField(blank=True, max_length=255),
         ),
         migrations.AlterField(
-            model_name='patient',
-            name='document_photo',
-            field=models.ImageField(upload_to='patient_documents/', validators=[django.core.validators.FileExtensionValidator(allowed_extensions=['jpg'])]),
+            model_name="patient",
+            name="document_photo",
+            field=models.ImageField(
+                upload_to="patient_documents/",
+                validators=[
+                    django.core.validators.FileExtensionValidator(
+                        allowed_extensions=["jpg"]
+                    )
+                ],
+            ),
         ),
         migrations.AlterField(
-            model_name='patient',
-            name='name',
-            field=models.CharField(max_length=255, validators=[patients.validators.validate_name]),
+            model_name="patient",
+            name="name",
+            field=models.CharField(
+                max_length=255, validators=[patients.validators.validate_name]
+            ),
         ),
     ]
