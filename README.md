@@ -1,5 +1,7 @@
 ## Set up and run
 
+-Add an `.env` file. There is an `.env.example` with the values used for this demo. Use those. 
+
 -Build the images: docker-compose build (maybe you need sudo)
 
 -Run app: docker-compose up (maybe you need sudo)
