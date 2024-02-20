@@ -6,6 +6,10 @@
 	gap: 6px;
 }
 
+.fieldContainer label, .fieldContainerSmall label {
+	color: white;
+}
+
 .fieldContainer input, .fieldContainerSmall input {
 	max-width: 250px;
     height: 48px;

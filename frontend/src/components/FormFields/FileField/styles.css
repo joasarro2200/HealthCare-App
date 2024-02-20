@@ -6,6 +6,10 @@
 	gap: 6px;
 }
 
+.fieldContainer label {
+	color: white;
+}
+
 .dragNDropContainer {
     cursor: pointer;
 	max-width: 250px;

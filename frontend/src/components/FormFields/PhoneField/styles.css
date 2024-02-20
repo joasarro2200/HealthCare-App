@@ -1,5 +1,9 @@
 @import '../../../styles/colors.css';
 
+.fieldContainerSmall label {
+	color: white;
+}
+
 .fieldContainerSmall input {
 	display: block !important;
     width: 300px;
